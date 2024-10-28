@@ -17,13 +17,13 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<AppUser> registerUser(@RequestBody  @Valid AppUserDTO appUser) {
+    public ResponseEntity<AppUserResponseDTO> registerUser(@RequestBody  @Valid AppUserDTO appUser) {
         AppUser newAppUser = userService.createUser(appUser);
         AppUserResponseDTO dto = new AppUserResponseDTO();
         dto.setEmail(newAppUser.getEmail());
         dto.setUsername(newAppUser.getUsername());
 
-        return ResponseEntity.ok(newAppUser);
+        return ResponseEntity.ok(dto);
     }
 
     @GetMapping("/{username}")
