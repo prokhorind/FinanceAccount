@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+#registration, #transaction, #transactions {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+input, select, button {
+    margin: 5px;
+    padding: 10px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
