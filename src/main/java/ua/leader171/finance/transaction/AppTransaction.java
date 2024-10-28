@@ -1,5 +1,6 @@
 package ua.leader171.finance.transaction;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,6 +21,7 @@ public class AppTransaction {
     private Long id;
 
     @ManyToOne
+    @JsonIgnore
     private AppUser appUser;
 
     private String type; // "income" або "expense"
