@@ -158,5 +158,31 @@ function viewTransactions() {
         });
 }
 
+
+// Function to fetch exchange rates and update the table
+function fetchExchangeRates() {
+    fetch(`${API_BASE_URL}/currencies`, {
+        method: 'GET',
+        headers: {
+            'Authorization': getAuthHeader()
+        }
+    })
+    // Fetch data from API
+        .then(response => {
+           return response.json()
+        })
+        .then(data => {
+            // Populate table with API data
+            data.forEach(item => {
+                console.log(item)
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching exchange rates:", error);
+        });
+}
+
+// Fetch and display data when the page loads
+document.addEventListener("DOMContentLoaded", fetchExchangeRates);
 // Перевірка статусу логіну при завантаженні сторінки
 document.addEventListener('DOMContentLoaded', checkLoginStatus);
