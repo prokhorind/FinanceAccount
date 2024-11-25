@@ -17,7 +17,7 @@ public class TransactionService {
     }
 
     public List<AppTransaction> getUserTransactions(AppUser appUser) {
-        return transactionRepository.findByAppUser(appUser);
+        return transactionRepository.findByAppUserOrderByDateDesc(appUser);
     }
 
     public List<AppTransaction> getUserTransactionsByDateRange(AppUser appUser, LocalDate startDate, LocalDate endDate) {
