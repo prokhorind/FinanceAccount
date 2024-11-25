@@ -249,5 +249,7 @@ function fetchExchangeRates() {
 
 // Fetch and display data when the page loads
 document.addEventListener("DOMContentLoaded", fetchExchangeRates);
+
+document.addEventListener("DOMContentLoaded", viewTransactions)
 // Перевірка статусу логіну при завантаженні сторінки
 document.addEventListener('DOMContentLoaded', checkLoginStatus);
